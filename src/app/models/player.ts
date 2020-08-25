@@ -1,4 +1,4 @@
-export class Player {
+export interface Player {
   id: String;
   name: String;
   is_active: boolean;

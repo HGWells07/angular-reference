@@ -1,10 +1,16 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Player</h5>
-    <form>
+    <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">Player name</label>
-        <input type="text" name="name" id="name" class="form-control" />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control"
+          [(ngModel)]="name"
+        />
       </div>
 
       <div class="form-group form-check">
@@ -13,13 +19,19 @@
           class="form-check-input"
           name="is_active"
           id="is_active"
+          [(ngModel)]="is_active"
         />
         <label class="form-check-label" for="is_active">Check me out</label>
       </div>
 
       <div class="form-group">
         <label for="team_id">Team Id</label>
-        <select class="form-control" name="team_id" id="team_id">
+        <select
+          class="form-control"
+          name="team_id"
+          id="team_id"
+          [(ngModel)]="team_id"
+        >
           <option value="1">1</option>
           <option value="2">2</option>
         </select>
@@ -27,7 +39,12 @@
 
       <div class="form-group">
         <label for="position_id">Position Id</label>
-        <select class="form-control" name="position_id" id="position_id">
+        <select
+          class="form-control"
+          name="position_id"
+          id="position_id"
+          [(ngModel)]="position_id"
+        >
           <option value="1">1</option>
           <option value="2">2</option>
         </select>
@@ -35,7 +52,12 @@
 
       <div class="form-group">
         <label for="photo_id">Photo Id</label>
-        <select class="form-control" name="photo_id" id="photo_id">
+        <select
+          class="form-control"
+          name="photo_id"
+          id="photo_id"
+          [(ngModel)]="photo_id"
+        >
           <option value="1">1</option>
           <option value="2">2</option>
         </select>
