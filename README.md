@@ -17,11 +17,13 @@ The redux like implementation is on the way! Coming soon!
 
 The architecture uses the following structure:
 
--   /components: Handle DOM rendering.
-    -   *.js: Component definition
-    -   *.module.sass: Style files
--   /models: Interfaces that reprecent the data that the application manages
--   /services: Handle API connections
+-   **/components**: Handle DOM rendering.
+    -   **.component.ts*: Component definition
+    -   **.component.html*: HTML template for the component
+    -   **.module.sass*: Style files
+    -   **.component.spec.ts*: Testing file for the component
+-   **/models**: Interfaces that reprecent the data that the application manages
+-   **/services**: Handle API connections
 
 
 ## Installation
@@ -55,7 +57,7 @@ Coming soon
 
 Coming soon!
 
-# On the ng command
+# On the ng CLI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
