@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Player</h5>
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">Player name</label>
         <input
@@ -9,7 +9,7 @@
           name="name"
           id="name"
           class="form-control"
-          [(ngModel)]="name"
+          formControlName="name"
         />
       </div>
 
@@ -19,7 +19,7 @@
           class="form-check-input"
           name="is_active"
           id="is_active"
-          [(ngModel)]="is_active"
+          formControlName="isActive"
         />
         <label class="form-check-label" for="is_active">Check me out</label>
       </div>
@@ -30,7 +30,7 @@
           class="form-control"
           name="team_id"
           id="team_id"
-          [(ngModel)]="team_id"
+          formControlName="teamId"
         >
           <option value="1">1</option>
           <option value="2">2</option>
@@ -43,7 +43,7 @@
           class="form-control"
           name="position_id"
           id="position_id"
-          [(ngModel)]="position_id"
+          formControlName="positionId"
         >
           <option value="1">1</option>
           <option value="2">2</option>
@@ -56,7 +56,7 @@
           class="form-control"
           name="photo_id"
           id="photo_id"
-          [(ngModel)]="photo_id"
+          formControlName="photoId"
         >
           <option value="1">1</option>
           <option value="2">2</option>
@@ -67,6 +67,7 @@
         class="btn btn-block btn-outline-success"
         type="submit"
         value="Submit"
+
       />
     </form>
   </div>

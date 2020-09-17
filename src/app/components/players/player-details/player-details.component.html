@@ -1,15 +1,31 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Nombre del jugador</h5>
-    <p class="card-text"><span class="bullet-title">Is active: </span>true</p>
-    <p class="card-text"><span class="bullet-title">team_id: </span> Id</p>
-    <p class="card-text"><span class="bullet-title">photo_id: </span> Id</p>
-    <p class="card-text"><span class="bullet-title">position_id: </span> Id</p>
+    <h5 class="card-title">
+      {{ player.name }}&nbsp;<span class="badge badge-secondary">{{
+        player.id
+      }}</span>
+    </h5>
+    <p class="card-text">
+      <span class="bullet-title">Is active: </span>{{ player.is_active }}
+    </p>
+    <p class="card-text">
+      <span class="bullet-title">team_id: </span> {{ player.team_id }}
+    </p>
+    <p class="card-text">
+      <span class="bullet-title">photo_id: </span> {{ player.photo_id }}
+    </p>
+    <p class="card-text">
+      <span class="bullet-title">position_id: </span> {{ player.position_id }}
+    </p>
     <hr />
     <p>
-      <a href="#" class="btn btn-outline-secondary">Edit</a>
+      <a [routerLink]="['../../edit', player.id]" class="btn btn-warning"
+        ><fa-icon [icon]="pencilIcon"></fa-icon> Edit</a
+      >
       &nbsp;
-      <a href="#" class="btn btn-outline-danger">Delete</a>
+      <button class="btn btn-danger" (click)="deletePlayer()"
+        ><fa-icon [icon]="timesIcon"></fa-icon> Delete</button
+      >
     </p>
   </div>
 </div>

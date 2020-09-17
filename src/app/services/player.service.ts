@@ -26,22 +26,41 @@ export class PlayerService {
     return of(this.players);
   }
 
-  addPlayer(player: Player) {
+  getPlayer(id: string): Observable<Player> {
+    return of(this.players.find((p) => p.id === id));
+  }
+
+  addPlayer(player: Player): void {
     this.players.push(player);
   }
 
-  editPlayer(player: Player) {
-    let index = this.players.findIndex((p) => p.id == player.id);
+  editPlayer(player: Player): void {
+    const index = this.players.findIndex((p) => p.id === player.id);
     this.players[index].name = player.name;
     this.players[index].is_active = player.is_active;
     this.players[index].photo_id = player.photo_id;
     this.players[index].team_id = player.team_id;
     this.players[index].position_id = player.position_id;
-    return player;
   }
 
-  deletePlayer(player: Player) {
-    this.players.filter((p) => player.id !== p.id);
+  deletePlayer(player: Player): void {
+    this.players.splice(
+      this.players.findIndex((p) => player.id === p.id),
+      1
+    );
+  }
+
+  getNewId(): string {
+    let id = Math.floor(Math.random() * 1000000000).toString();
+    let flag = false;
+    while (!flag) {
+      if (this.players.findIndex((p) => p.id === id) < 0) {
+        flag = true;
+      } else {
+        id = Math.floor(Math.random() * 1000000000).toString();
+      }
+    }
+    return id;
   }
 
   constructor() {
